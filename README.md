@@ -409,11 +409,11 @@ The Oslo colour map originates from the Scientific Colour Maps collection by Fab
 
 ## License
 
-Licensing information for the code in this repository will be specified in the `LICENSE` file before the public release.
+The original code in this repository is distributed under the GNU General Public License v3.0. See the `LICENSE` file for details.
 
-SSHT is an external software dependency and is not included in this repository.
+SSHT is an external software dependency and is not included in this repository. SSHT is distributed separately under the GPL-3.0 license.
 
-The bundled `oslo.txt` colour-map table is third-party material from the Scientific Colour Maps collection and is identified separately in `src/visualization/colormaps/README.md`.
+The bundled `oslo.txt` colour-map table is third-party material from the Scientific Colour Maps collection and is identified separately in `src/visualization/colormaps/README.md`. Its original attribution and licensing terms remain applicable.
 
 ## Contact
 

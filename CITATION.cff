@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code in published work, please cite the associated publication listed below."
+title: "Superfluid Kelvin–Helmholtz instability on a spherical shell"
+type: software
+authors:
+  - family-names: "Richaud"
+    given-names: "Andrea"
+  - family-names: "Sorba"
+    given-names: "Marianna"
+repository-code: "https://github.com/AndreaRichaud/superfluid-kelvin-helmholtz-instability-on-sphere"
+version: 1.0.0
+date-released: 2026-07-14
+license: GPL-3.0-only
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Sorba"
+      given-names: "Marianna"
+    - family-names: "Richaud"
+      given-names: "Andrea"
+  title: "A magnetic monopole in a superfluid bubble"
+  year: 2026
