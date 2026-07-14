@@ -6,11 +6,11 @@ The code was developed for the numerical simulations reported in:
 
 > M. Sorba and A. Richaud, *A magnetic monopole in a superfluid bubble* (2026).
 
-The simulations describe a single-component Bose–Einstein condensate confined to a spherical shell. The initial state is prepared with counter-propagating azimuthal superflows in the northern and southern hemispheres, separated by an equatorial potential barrier. In the coordinate representation used by the code, the phase approaches $begin:math:text$\+q\\phi$end:math:text$ in the northern hemisphere and $begin:math:text$\-q\\phi$end:math:text$ in the southern hemisphere, with a smooth interpolation near the equator. This phase profile represents two like-charged polar vortices of winding number q, one at each pole. Lowering the barrier brings the two flows into contact and, in the simulated cases considered here, generates an equatorial necklace of $begin:math:text$2q$end:math:text$ singly quantized vortices. The subsequent evolution is used to study the breakup of this quantized shear layer and its Kelvin–Helmholtz-like instability.
+The simulations describe a single-component Bose–Einstein condensate confined to a spherical shell. The initial state is prepared with counter-propagating azimuthal superflows in the northern and southern hemispheres, separated by an equatorial potential barrier. In the coordinate representation used by the code, the phase approaches +<i>qφ</i> in the northern hemisphere and −<i>qφ</i> in the southern hemisphere, with a smooth interpolation near the equator. This phase profile represents two like-charged polar vortices of winding number <i>q</i>, one at each pole. Lowering the barrier brings the two flows into contact and, in the simulated cases considered here, generates an equatorial necklace of 2<i>q</i> singly quantized vortices. The subsequent evolution is used to study the breakup of this quantized shear layer and its Kelvin–Helmholtz-like instability.
 
 The released workflows study:
 
-- the Gross–Pitaevskii dynamics for vortex charges $begin:math:text$q\=1\,\\ldots\,10$end:math:text$;
+- the Gross–Pitaevskii dynamics for vortex charges <i>q</i> = 1,...,10;
 - the formation and evolution of the equatorial vortex necklace;
 - vortex trajectories on an equirectangular representation of the sphere;
 - the growth of vortex-displacement modes;
@@ -153,13 +153,13 @@ params.sample_frequency_real = 1000;
 params.l_filter_real         = 18;
 ```
 
-For each value of $begin:math:text$q$end:math:text$, the workflow:
+For each value of <i>q</i>, the workflow:
 
-1. prepares a single-component state on the sphere by imaginary-time evolution;
-2. initializes the coordinate phase profiles $begin:math:text$\+q\\phi$end:math:text$ and $begin:math:text$\-q\\phi$end:math:text$ in the northern and southern hemispheres, respectively;
-3. separates the hemispherical flows with an equatorial potential barrier;
-4. lowers the barrier linearly over the time `T_slope`;
-5. evolves the Gross–Pitaevskii equation in real time;
+1. initializes a two-patch phase profile approaching +<i>qφ</i> and −<i>qφ</i> in the northern and southern hemispheres, respectively;
+2. prepares the barrier-separated initial state by imaginary-time evolution in the presence of the equatorial barrier and polar pinning potentials;
+3. removes the polar pinning potentials;
+4. lowers the equatorial barrier linearly over the time `T_slope`;
+5. evolves the single-component Gross–Pitaevskii equation in real time;
 6. saves diagnostics, Oslo-rendered JPEG frames, and wavefunction snapshots for vortex tracking.
 
 Results are written to:
@@ -223,7 +223,7 @@ Real-time evolution is performed by:
 Run_single_component_dynamics_sphere
 ```
 
-The equatorial barrier is lowered linearly to zero over `T_slope` and remains absent afterwards.
+The polar pinning potentials used during initial-state preparation are absent during the real-time dynamics. The equatorial barrier is lowered linearly to zero over `T_slope` and remains absent afterwards.
 
 During the dynamics, the code records:
 
@@ -231,7 +231,7 @@ During the dynamics, the code records:
 - total Gross–Pitaevskii energy;
 - wavefunction norm;
 - instantaneous barrier amplitude;
-- total angular momentum along the $begin:math:text$z$end:math:text$ axis.
+- total angular momentum along the <i>z</i> axis.
 
 The progress log reports the relative changes in energy and angular momentum with respect to the first sampled real-time state.
 
@@ -261,7 +261,7 @@ The convenience script:
 run_single_vortex_charge_case
 ```
 
-reruns the real-time dynamics for one selected value of $begin:math:text$q$end:math:text$ with independently specified real-time parameters.
+reruns the real-time dynamics for one selected value of <i>q</i> with independently specified real-time parameters.
 
 The default selected case is:
 
@@ -303,14 +303,14 @@ Run:
 create_charge_sweep_comparison_videos
 ```
 
-The script combines the $begin:math:text$q\=1\,\\ldots\,9$end:math:text$ simulations into 3-by-3 comparison videos.
+The script combines the <i>q</i> = 1,...,9 simulations into 3-by-3 comparison videos.
 
 Two videos are produced:
 
 - a density comparison using the left panel of each rendered frame;
 - a phase comparison using the right panel of each rendered frame.
 
-The script uses the saved time vector from the $begin:math:text$q\=1$end:math:text$ simulation as the reference time axis and truncates all cases to the common number of available frames.
+The script uses the saved time vector from the <i>q</i> = 1 simulation as the reference time axis and truncates all cases to the common number of available frames.
 
 ### Vortex tracking on an equirectangular map
 
@@ -320,7 +320,7 @@ Run:
 track_vortices_on_equirectangular_map
 ```
 
-The script reads the saved wavefunction snapshots from `psi_a_vs_t/` and tracks the expected $begin:math:text$2q$end:math:text$ density depletions associated with the equatorial vortex necklace.
+The script reads the saved wavefunction snapshots from `psi_a_vs_t/` and tracks the expected 2<i>q</i> density depletions associated with the equatorial vortex necklace.
 
 Tracking starts from the first saved frame satisfying:
 
@@ -352,16 +352,16 @@ estimate_instability_growth_rate
 
 This workflow uses the tracked vortex trajectories to analyse the growth of vortex-displacement modes.
 
-For each charge $begin:math:text$q$end:math:text$, the script constructs the complex vortex displacement and evaluates its discrete Fourier modes along the necklace. It then analyses the fixed highest-wavenumber mode $begin:math:text$m\=q$end:math:text$, which is the maximum independent Fourier mode supported by a necklace of $begin:math:text$2q$end:math:text$ vortices.
+For each charge <i>q</i>, the script constructs the complex vortex displacement and evaluates its discrete Fourier modes along the necklace. Since the necklace contains <i>N</i><sub>v</sub> = 2<i>q</i> vortices, the analysis focuses on the highest-wavenumber mode supported by the discrete ring, <i>m</i> = <i>N</i><sub>v</sub>/2 = <i>q</i>, and monitors the amplitude |<i>c</i><sub>q</sub>|.
 
-An exponential-growth interval is identified from the logarithm of the selected mode amplitude, subject to the fit thresholds defined in the script.
+The instability growth rate is extracted from a linear fit of log|<i>c</i><sub>q</sub>|. The fitting interval is selected automatically among contiguous candidate windows satisfying the amplitude and goodness-of-fit thresholds defined in the script.
 
 The extracted quantities include:
 
-- the fitted growth rate $begin:math:text$\\sigma\_\*$end:math:text$;
+- the fitted growth rate <i>σ</i><sub>*</sub>;
 - the uncertainty of the linear-log fit;
 - the dimensionless growth rate;
-- the analysed mode index $begin:math:text$m\_\*\=q$end:math:text$;
+- the analysed mode index <i>m</i><sub>*</sub> = <i>q</i>;
 - the fit interval and coefficient of determination;
 - normalized growth-rate ratios used in the analysis.
 
@@ -383,7 +383,7 @@ The workflow is divided into two stages:
 The repository includes diagnostic routines for:
 
 - total Gross–Pitaevskii energy;
-- total angular momentum along the $begin:math:text$z$end:math:text$ axis.
+- total angular momentum along the <i>z</i> axis.
 
 Visualization routines provide both the standard spherical rendering and the Oslo-based density rendering used for the released frames.
 
