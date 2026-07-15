@@ -1,4 +1,5 @@
 # Superfluid Kelvin–Helmholtz instability on a spherical shell
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21367835.svg)](https://doi.org/10.5281/zenodo.21367835)
 
 MATLAB code for the preparation, real-time Gross–Pitaevskii evolution, and post-processing of an equatorial vortex necklace and its Kelvin–Helmholtz-like instability on a spherical superfluid shell.
 
@@ -395,13 +396,21 @@ The real-time simulations can generate large MATLAB data files, many JPEG frames
 
 The post-processing scripts read the generated simulation data and may create MPEG-4 videos, tracking files, diagnostic figures, and instability-analysis outputs.
 
+## Related repository
+
+The two-component Gross–Pitaevskii simulations of massive vortex-dipole dynamics reported in the same work are available in the companion repository:
+
+- [Massive vortex dipole on a spherical superfluid shell](https://github.com/AndreaRichaud/massive-vortex-dipole-on-sphere)
+
 ## Citation
 
 If you use this code in published work, please cite the associated publication:
 
 > M. Sorba and A. Richaud, *A magnetic monopole in a superfluid bubble* (2026).
 
-A citation for the archived software release and its DOI will be added after the corresponding public release is deposited.
+Please also cite the archived software release when referring specifically to the numerical implementation or to a particular version of the code:
+
+> A. Richaud and M. Sorba, *Superfluid Kelvin–Helmholtz instability on a spherical shell*, version 1.0.0 (2026). [https://doi.org/10.5281/zenodo.21367835](https://doi.org/10.5281/zenodo.21367835).
 
 Since this code uses SSHT for spherical harmonic transforms, users should also follow the referencing instructions provided by the SSHT developers and cite the relevant SSHT papers listed above.
 
