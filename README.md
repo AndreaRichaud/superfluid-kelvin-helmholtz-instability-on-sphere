@@ -5,7 +5,8 @@ MATLAB code for the preparation, real-time Gross–Pitaevskii evolution, and pos
 
 The code was developed for the numerical simulations reported in:
 
-> M. Sorba and A. Richaud, *A magnetic monopole in a superfluid bubble* (2026).
+> M. Sorba and A. Richaud, *A magnetic monopole in a superfluid bubble*, arXiv:2607.15093 (2026).  
+> [https://doi.org/10.48550/arXiv.2607.15093](https://doi.org/10.48550/arXiv.2607.15093)
 
 The simulations describe a single-component Bose–Einstein condensate confined to a spherical shell. The initial state is prepared with counter-propagating azimuthal superflows in the northern and southern hemispheres, separated by an equatorial potential barrier. In the coordinate representation used by the code, the phase approaches +<i>qφ</i> in the northern hemisphere and −<i>qφ</i> in the southern hemisphere, with a smooth interpolation near the equator. This phase profile represents two like-charged polar vortices of winding number <i>q</i>, one at each pole. Lowering the barrier brings the two flows into contact and, in the simulated cases considered here, generates an equatorial necklace of 2<i>q</i> singly quantized vortices. The subsequent evolution is used to study the breakup of this quantized shear layer and its Kelvin–Helmholtz-like instability.
 
@@ -404,15 +405,21 @@ The two-component Gross–Pitaevskii simulations of massive vortex-dipole dynami
 
 ## Citation
 
-If you use this code in published work, please cite the associated publication:
+If you use this software in published work, please cite the associated research article:
 
-> M. Sorba and A. Richaud, *A magnetic monopole in a superfluid bubble* (2026).
+> M. Sorba and A. Richaud,  
+> *A magnetic monopole in a superfluid bubble*,  
+> arXiv:2607.15093 (2026).  
+> [https://doi.org/10.48550/arXiv.2607.15093](https://doi.org/10.48550/arXiv.2607.15093)
 
 Please also cite the archived software release when referring specifically to the numerical implementation or to a particular version of the code:
 
-> A. Richaud and M. Sorba, *Superfluid Kelvin–Helmholtz instability on a spherical shell*, version 1.0.0 (2026). [https://doi.org/10.5281/zenodo.21367835](https://doi.org/10.5281/zenodo.21367835).
+> A. Richaud and M. Sorba,  
+> *Superfluid Kelvin–Helmholtz instability on a spherical shell*,  
+> version 1.0.0, Zenodo (2026).  
+> [https://doi.org/10.5281/zenodo.21367835](https://doi.org/10.5281/zenodo.21367835)
 
-Since this code uses SSHT for spherical harmonic transforms, users should also follow the referencing instructions provided by the SSHT developers and cite the relevant SSHT papers listed above.
+Since this software uses SSHT for spherical harmonic transforms, users should also follow the referencing instructions provided by the SSHT developers and cite the relevant SSHT papers listed above.
 
 The Oslo colour map originates from the Scientific Colour Maps collection by Fabio Crameri. Please follow the citation instructions associated with the original Scientific Colour Maps distribution.
 
